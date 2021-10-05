@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <script type="text/javascript" src="modules/lodash.core.min.js"></script>
+    <script type="text/javascript" src="modules/test-boilerplate.js"></script>
+    <script type="text/javascript" src="nobels.js"></script>
+    <link rel="stylesheet" type="text/css" href="outline.css" />
+  </head>
+
+  <body>
+    <h1 id="top">タイトル</h1>
+    <div id="container">#container ループの親
+      <div class="float">常に画面右上に表示<br>選択でジャンプ<br>
+        <select id="jump">
+          <option value="#top">一番上に戻る</option>
+          <option value="(year)">(year)</option>
+        </select>
+      </div>
+      <div class="yearBox" id="year">
+        .yearBox #(year)<br>
+        年ごとにループ
+        <h2>h2 年</h2>
+        <div class="categoryBox" id="(year)(category)">.categoryBox #(year)(category)<br>
+          カテゴリーごとにループ（なければ非表示）
+          <h3>h3 カテゴリー名 emoji</h3>
+          <div class="motivation">motivation</div>
+          <div class="name">name</div>
+        </div>
+        <div class="categoryBox" id="(year)(category)">.categoryBox #(year)(category)<br>
+          カテゴリーごとにループ（なければ非表示）
+          <h3>カテゴリー名</h3>
+          <div class="motivation">motivation</div>
+          <div class="name">name</div>
+        </div>
+      </div>
+      <div class="yearBox" id="year">
+        .yearBox #(year)<br>
+        年ごとにループ
+        <h2>年</h2>
+        <div class="categoryBox" id="(year)(category)">.categoryBox #(year)(category)<br>
+          カテゴリーごとにループ（なければ非表示）
+          <h3>カテゴリー名</h3>
+          <div class="motivation">motivation</div>
+          <div class="name">name</div>
+        </div>
+        <div class="categoryBox" id="(year)(category)">.categoryBox #(year)(category)<br>
+          カテゴリーごとにループ（なければ非表示）
+          <h3>カテゴリー名</h3>
+          <div class="motivation">motivation</div>
+          <div class="name">name</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script type="text/javascript" src="script.js"></script> -->
+</html>
