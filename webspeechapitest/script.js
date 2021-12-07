@@ -17,6 +17,7 @@ speech.onresult = function(e) {
         speech.stop();
         if(e.results[0].isFinal){
             let autotext =  e.results[0][0].transcript
+            content.innerHTML += '<div>'+ autotext +'</div>';
             // post to zoom
             const url = zoomApiToken + '&seq=' + seq + '&lang=' + speech.lang;
             fetch (url, autotext)
