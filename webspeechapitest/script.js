@@ -21,7 +21,10 @@ speech.onresult = function(e) {
             // post to zoom
             const url = zoomApiToken + '&seq=' + seq + '&lang=' + speech.lang;
             console.log("zoomApiToken:", url);
-            fetch (url, autotext)
+            fetch (url, {
+                method: 'POST',
+                body:autotext
+            })
             .then (res => {
                 content.innerHTML += '<div>'+ autotext +'</div>';
                 seq ++;
