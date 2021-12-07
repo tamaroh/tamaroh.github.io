@@ -19,14 +19,15 @@ speech.onresult = function(e) {
             let autotext =  e.results[0][0].transcript
             // post to zoom
             const url = zoomApiToken + '&seq=' + seq + '&lang=' + speech.lang;
-            // fetch (url, autotext)
-            // .then (res => {
+            fetch (url, autotext)
+            .then (res => {
                 content.innerHTML += '<div>'+ autotext +'</div>';
-            //     seq ++;
-            // } )
-            // .catch((res, err) => {
-            //     console.log(err);
-            // })
+                seq ++;
+                return res;
+            } )
+            .catch((res, err) => {
+                return err;
+            })
             // if responce is not error
             //     seq ++
             // else retry
