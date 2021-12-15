@@ -22,6 +22,7 @@ btn.addEventListener('click' , function() {
             seq ++;
             return res;
         });
+    setTimeout(null, 3000);
     }
 });
 
