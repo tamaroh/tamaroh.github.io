@@ -26,7 +26,8 @@ speech.onresult = function(e) {
                 body:autotext
             })
             .then (res => {
-                content.innerHTML += '<div>'+ autotext +'</div>';
+                console.log(res);
+                content.innerHTML += '<div>'+ autotext +'</div>\r\n';
                 seq ++;
                 return res;
             });
