@@ -13,7 +13,7 @@ btn.addEventListener('click' , function() {
         fetch (url, {
             method: 'POST',
             mode: 'no-cors',
-            body: message
+            body: message + '\r\n'
         })
         .then (res => {
             console.log(res);
