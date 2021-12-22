@@ -12,15 +12,12 @@ function setZoom() {
 
 function sendToZoom(msg) {
     const url = zoomApiToken + '&seq=' + seq + '&lang=ja-JP';
-    fetch(url, {
+    console.log(fetch(url, {
         method: 'POST',
         mode: 'cors',
         body: msg,
         origin: 'https://tamaroh.github.io/'
-    }).then(res => {
-        console.log(res);
-        console.log(res.headers);
-    })
+    }));
     seq ++ ;
 }
 speech.onresult = function(e) {
