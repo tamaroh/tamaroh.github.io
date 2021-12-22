@@ -16,6 +16,7 @@ function sendToZoom(msg) {
         method: 'POST',
         mode: 'cors',
         body: msg,
+        origin: 'https://tamaroh.github.io/'
     }).then(res => {
         console.log(res);
         console.log(res.headers);
