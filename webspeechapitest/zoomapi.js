@@ -1,27 +1,42 @@
 const start = document.getElementById('start');
-const send = document.getElementById('send');
+// const send = document.getElementById('send');
 const content = document.getElementById('content');
+const speech = new webkitSpeechRecognition();
 let zoomApiToken;
 let seq = 0;
+
 function setZoom() {
     zoomApiToken = document.getElementById("apitoken").value;
+    speech.start();
 }
 
-function sendToZoom() {
-    const message = "Message test: seq = " + seq;
+function sendToZoom(msg) {
     const url = zoomApiToken + '&seq=' + seq + '&lang=ja-JP';
     fetch(url, {
         method: 'POST',
         mode: 'no-cors',
-        body: message,
-    }).then(res => {
-        console.log(res);
-    })
+        body: msg,
+    });
     seq ++ ;
 }
+speech.onresult = function(e) {
+    speech.stop();
+    if(e.results[0].isFinal){
+        let autotext =  e.results[0][0].transcript
+        content.innerHTML += '<div>'+ autotext +'</div>';
+        // post to zoom
+        sendToZoom(autotext);
+        // if responce is not error
+        //     seq ++
+        // else retry
+    }
+}
 
+speech.onend = () => { 
+    speech.start() 
+};
 start.addEventListener('click' ,setZoom);
-send.addEventListener('click', sendToZoom)
+// send.addEventListener('click', sendToZoom)
 // async function useZoom() {
 //     // save token
 //     zoomApiToken = document.getElementById("apitoken").value;
