@@ -14,7 +14,7 @@ function sendToZoom(msg) {
     const url = zoomApiToken + '&seq=' + seq + '&lang=ja-JP';
     fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         body: msg,
     });
     seq ++ ;
