@@ -16,6 +16,7 @@ function sendToZoom(msg) {
         method: 'POST',
         mode: 'no-cors',
         body: msg,
+        origin: 'https://tamaroh.github.io/',
     });
     seq ++ ;
 }
